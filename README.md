@@ -3,8 +3,8 @@
 ### Описание
 Оплата товаров с помощью сервиса Stripe Payments.
 #### >Сервис размещен на сервере Yandex Cloud и доступен по адресу:
-#### >http://51.250.66.16/item/1/  
-#### >Админка доступна по адресу http://51.250.66.16/admin/  
+#### >http://51.250.12.223/item/1/  
+#### >Админка доступна по адресу http://51.250.12.223/admin/  
 #### >Пользователь: admin Пароль: admin
 
 ### Технологии
@@ -23,11 +23,11 @@ ssh <server user>@<server IP>
 #### Клонируйте проект на сервер:
 git@github.com:AlexMinVrn/rishat_stripe_project.git
 
-#### Подготовьте дополнительные данные (.env и nginx.conf):
+#### Подготовьте дополнительные данные (.env и default.conf):
 
-##### Скопируйте в директорию проекта infra/ файл nginx.conf 
+##### Скопируйте в директорию проекта infra/ файл default.conf 
 
-##### В файле nginx.conf в строке server_name укажите данные ip вашего сервера.
+##### В файле default.conf в строке server_name укажите данные ip вашего сервера.
 
 ##### Создайте в директории проекта infra/ файл .env и наполните его следующими данными
 DEBUG=0  
@@ -46,14 +46,14 @@ sudo apt install docker-compose
 sudo docker-compose up -d --build
 
 ##### Выполните миграции
-sudo docker-compose exec backend python manage.py makemigrations  
-sudo docker-compose exec backend python manage.py migrate
+sudo docker-compose exec web python manage.py makemigrations  
+sudo docker-compose exec web python manage.py migrate
 
 ##### Создайте суперюзера:
-sudo docker-compose exec backend python manage.py createsuperuser
+sudo docker-compose exec web python manage.py createsuperuser
 
 ##### Cоберите статику
-sudo docker-compose exec backend python manage.py collectstatic --no-input
+sudo docker-compose exec web python manage.py collectstatic --no-input
 
 
 ### Автор
