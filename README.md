@@ -1,0 +1,1 @@
+# rishat_stripe_project
