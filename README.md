@@ -23,9 +23,9 @@ ssh <server user>@<server IP>
 #### Клонируйте проект на сервер:
 git@github.com:AlexMinVrn/rishat_stripe_project.git
 
-#### Подготовьте дополнительные данные (.env и default.conf):
+#### Подготовьте дополнительные данные (.env и nginx.conf):
 
-##### Скопируйте в директорию проекта infra/ файл default.conf 
+##### Скопируйте в директорию проекта infra/ файл nginx.conf 
 
 ##### В файле default.conf в строке server_name укажите данные ip вашего сервера.
 
